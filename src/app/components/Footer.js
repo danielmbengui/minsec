@@ -3,15 +3,10 @@
 import Image from 'next/image';
 import { useLang } from '../LangContext';
 import styles from './Footer.module.css';
-import { useEffect, useState } from 'react';
 
 export default function Footer() {
   const { t } = useLang();
-  const [year,setYear] = useState(null);
-  useEffect(() => {
-    console.log('Footer mounted');
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
