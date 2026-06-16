@@ -1,0 +1,145 @@
+.section {
+  padding: 100px 24px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-raised) 100%);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sealCol {
+  display: flex;
+  justify-content: center;
+}
+
+.seal {
+  width: 100%;
+  max-width: 280px;
+}
+
+.sealSvg {
+  width: 100%;
+  height: auto;
+}
+
+.sealRingOuter {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1;
+}
+.sealRingInner {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.tick {
+  stroke: var(--green);
+  stroke-width: 1.5;
+  opacity: 0.25;
+  animation: tickGlow 3.6s ease-in-out infinite;
+}
+
+@keyframes tickGlow {
+  0%, 100% { opacity: 0.2; stroke: var(--green); }
+  50% { opacity: 0.9; stroke: var(--gold); }
+}
+
+.lock {
+  animation: lockFloat 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes lockFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.lockBody {
+  fill: var(--bg-card);
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+.lockShackle {
+  stroke: var(--gold);
+  stroke-width: 4;
+}
+.lockKeyhole {
+  fill: var(--green);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: clamp(26px, 3.6vw, 38px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+.points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  font-size: 13px;
+}
+
+.pointLabel {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.pointArrow {
+  color: var(--green);
+}
+
+.pointValue {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .points {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tick, .lock {
+    animation: none;
+  }
+}

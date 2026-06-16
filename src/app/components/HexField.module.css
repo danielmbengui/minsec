@@ -1,0 +1,59 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, black 40%, transparent 85%);
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hex {
+  fill: rgba(61, 220, 151, 0.035);
+  stroke: rgba(61, 220, 151, 0.28);
+  stroke-width: 1;
+  animation: hexPulse 5s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes hexPulse {
+  0%, 100% {
+    opacity: 0.45;
+    stroke: rgba(61, 220, 151, 0.28);
+  }
+  50% {
+    opacity: 1;
+    stroke: rgba(232, 199, 102, 0.5);
+  }
+}
+
+.link {
+  stroke: rgba(214, 226, 245, 0.12);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  animation: linkFlow 6s linear infinite;
+}
+
+@keyframes linkFlow {
+  0% {
+    stroke-dashoffset: 0;
+    stroke: rgba(214, 226, 245, 0.1);
+  }
+  50% {
+    stroke: rgba(61, 220, 151, 0.35);
+  }
+  100% {
+    stroke-dashoffset: 40;
+    stroke: rgba(214, 226, 245, 0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hex, .link {
+    animation: none;
+  }
+}

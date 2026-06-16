@@ -1,0 +1,100 @@
+.section {
+  padding: 120px 24px;
+  background: var(--bg-raised);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(26px, 3.6vw, 36px);
+  font-weight: 700;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.table {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.headRow,
+.bodyRow {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.4fr;
+  gap: 16px;
+}
+
+.headRow {
+  padding: 16px 24px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.headWithout {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.headWith {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.bodyRow {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.bodyRow:last-child {
+  border-bottom: none;
+}
+.bodyRow:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.rowKey {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cellWithout {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.cellWith {
+  font-size: 13.5px;
+  color: var(--text-primary);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .headRow,
+  .bodyRow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .headWithout, .headWith {
+    display: none;
+  }
+  .cellWithout::before {
+    content: '✕ ';
+    color: var(--text-muted);
+  }
+  .cellWith::before {
+    content: '✓ ';
+    color: var(--green);
+  }
+}

@@ -1,0 +1,108 @@
+.section {
+  padding: 120px 24px;
+  background: var(--bg-raised);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 680px;
+  margin-bottom: 56px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 14px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+
+.pillars {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pillar {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 199, 102, 0.3);
+  background: var(--gold-dim);
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.useGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.useCard {
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+
+.useTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.useList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.useList li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.useList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--green);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 700px) {
+  .useGrid {
+    grid-template-columns: 1fr;
+  }
+}
